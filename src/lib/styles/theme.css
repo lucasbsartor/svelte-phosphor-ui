@@ -1,0 +1,42 @@
+/**
+ * Phosphor Theme - Core Design Tokens
+ * 
+ * This file is REQUIRED. It contains the color palette, typography,
+ * and Tailwind CSS setup for Phosphor components.
+ */
+
+/* JetBrains Mono from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  /* Background & Surfaces */
+  --color-tui-bg: #0a0a0a;
+  --color-tui-surface: #111111;
+  --color-tui-border: #2a2a2a;
+
+  /* Text */
+  --color-tui-text: #e5e5e5;
+  --color-tui-dim: #737373;
+
+  /* Primary - Green (terminal classic) */
+  --color-tui-primary: #22c55e;
+  --color-tui-primary-dim: #166534;
+
+  /* Secondary - Amber (highlights, warnings) */
+  --color-tui-secondary: #f59e0b;
+
+  /* Destructive - Red */
+  --color-tui-destructive: #ef4444;
+
+  /* Accent - Cyan (info, links) */
+  --color-tui-accent: #06b6d4;
+
+  /* Typography */
+  --font-tui-mono:
+    'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono',
+    monospace;
+}

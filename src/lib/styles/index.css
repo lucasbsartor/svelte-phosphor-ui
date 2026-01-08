@@ -1,0 +1,23 @@
+/**
+ * Phosphor Styles - Full Bundle
+ * 
+ * Import this file for the complete Phosphor experience.
+ * Or import individual files for more control:
+ * 
+ * Required:
+ *   @import 'phosphor/styles/theme.css';
+ * 
+ * Recommended:
+ *   @import 'phosphor/styles/base.css';
+ *   @import 'phosphor/styles/utilities.css';
+ * 
+ * Optional (retro effects):
+ *   @import 'phosphor/styles/effects.css';
+ *   @import 'phosphor/styles/animations.css';
+ */
+
+@import './theme.css';
+@import './base.css';
+@import './utilities.css';
+@import './effects.css';
+@import './animations.css';

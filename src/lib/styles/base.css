@@ -1,0 +1,51 @@
+/**
+ * Phosphor Base - Global Styles
+ * 
+ * Apply these styles globally for consistent look & feel.
+ * Includes: typography defaults, scrollbar styling, selection colors.
+ * 
+ * Requires: theme.css
+ */
+
+/* Base Typography & Background */
+html {
+  font-family: var(--font-tui-mono);
+  background-color: var(--color-tui-bg);
+  color: var(--color-tui-text);
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-tui-bg);
+}
+
+/* Selection Styling */
+::selection {
+  background-color: var(--color-tui-primary);
+  color: var(--color-tui-bg);
+}
+
+/* Custom Scrollbar - Webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-tui-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-tui-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-tui-dim);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-tui-border) var(--color-tui-bg);
+}

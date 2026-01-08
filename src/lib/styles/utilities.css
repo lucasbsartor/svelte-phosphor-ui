@@ -1,0 +1,69 @@
+/**
+ * Phosphor Utilities - Reusable CSS Classes
+ * 
+ * Core utility classes used across Phosphor components.
+ * These provide the foundational patterns for building layouts.
+ * 
+ * Requires: theme.css
+ */
+
+/* Terminal Box - The core container pattern
+ * Used for panels, cards, sections, dialogs
+ */
+.terminal-box {
+  border: 1px solid var(--color-tui-border);
+  background-color: var(--color-tui-surface);
+}
+
+/* Glow Border - Focus/active state indicator
+ * Apply to focused inputs, selected items, active panels
+ */
+.glow-border {
+  box-shadow:
+    0 0 0 1px var(--color-tui-primary),
+    0 0 10px rgba(34, 197, 94, 0.3),
+    inset 0 0 20px rgba(34, 197, 94, 0.05);
+}
+
+/* Glow Border variants for different states */
+.glow-border-secondary {
+  box-shadow:
+    0 0 0 1px var(--color-tui-secondary),
+    0 0 10px rgba(245, 158, 11, 0.3),
+    inset 0 0 20px rgba(245, 158, 11, 0.05);
+}
+
+.glow-border-destructive {
+  box-shadow:
+    0 0 0 1px var(--color-tui-destructive),
+    0 0 10px rgba(239, 68, 68, 0.3),
+    inset 0 0 20px rgba(239, 68, 68, 0.05);
+}
+
+/* ASCII Box - Helper for box-drawing character layouts */
+.ascii-box {
+  position: relative;
+}
+
+/* Divider - Horizontal rule in terminal style */
+.tui-divider {
+  border: none;
+  border-top: 1px solid var(--color-tui-border);
+  margin: 1rem 0;
+}
+
+/* Text utilities */
+.text-tui-primary { color: var(--color-tui-primary); }
+.text-tui-secondary { color: var(--color-tui-secondary); }
+.text-tui-destructive { color: var(--color-tui-destructive); }
+.text-tui-accent { color: var(--color-tui-accent); }
+.text-tui-dim { color: var(--color-tui-dim); }
+
+/* TUI Sharp - No rounded corners anywhere
+ * Apply to a container to enforce sharp corners on all children
+ * Safety net against Tailwind defaults sneaking in
+ */
+.tui-sharp,
+.tui-sharp * {
+  border-radius: 0 !important;
+}

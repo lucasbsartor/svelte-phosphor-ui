@@ -1,0 +1,116 @@
+/**
+ * Phosphor Effects - Retro Visual Effects (Optional)
+ * 
+ * These effects add the "phosphor glow" aesthetic.
+ * They are purely decorative and fully optional.
+ * 
+ * Includes: CRT glow, scanlines, cursor blink, flicker
+ * 
+ * Requires: theme.css
+ */
+
+/* CRT Glow - Text shadow that mimics phosphor monitor glow
+ * Use on headers, interactive elements, or for emphasis
+ */
+.crt-glow {
+  text-shadow:
+    0 0 5px var(--color-tui-primary),
+    0 0 10px rgba(34, 197, 94, 0.5);
+}
+
+/* CRT Glow variants */
+.crt-glow-secondary {
+  text-shadow:
+    0 0 5px var(--color-tui-secondary),
+    0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+.crt-glow-accent {
+  text-shadow:
+    0 0 5px var(--color-tui-accent),
+    0 0 10px rgba(6, 182, 212, 0.5);
+}
+
+/* Scanlines - CRT monitor scanline effect
+ * Apply to a container element. Creates horizontal lines overlay.
+ * Note: Uses ::before pseudo-element
+ */
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanlines::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* Blinking Cursor - Classic terminal cursor animation
+ * Apply to cursor elements or input indicators
+ */
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Flicker - Brief screen flicker effect
+ * Use for boot sequences, loading states, or transitions
+ */
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  25%,
+  75% {
+    opacity: 0.9;
+  }
+}
+
+.flicker {
+  animation: flicker 0.15s ease-in-out;
+}
+
+/* Pulse glow - Subtle pulsing glow effect
+ * Good for active/processing states
+ */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px var(--color-tui-primary),
+      0 0 10px rgba(34, 197, 94, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px var(--color-tui-primary),
+      0 0 20px rgba(34, 197, 94, 0.5);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
